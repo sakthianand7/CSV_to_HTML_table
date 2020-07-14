@@ -38,8 +38,10 @@ def convert_csv_to_html(data):
   html_content += """</tr></table></body></html>"""
   return html_content
 
-with open('housing_prices.csv',"r") as datafile:
-  data = list(csv.reader(datafile))
-html_content=convert_csv_to_html(data)
-with open('housing_prices.html','w') as htmlfile:
+def main():
+  with open('housing_prices.csv',"r") as datafile:
+    data = list(csv.reader(datafile))
+  html_content=convert_csv_to_html(data)
+  with open('housing_prices.html','w') as htmlfile:
     htmlfile.write(html_content)
+main()
